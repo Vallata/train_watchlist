@@ -1,0 +1,11 @@
+<div class="card-bookmark m-3">
+  <%# element to display coming from iteration %>
+  <%= bookmark.comment %>
+  <%= bookmark.movie.title %>
+  <%= bookmark.movie.overview %>
+  <%= bookmark.movie.rating %>
+  <%# image tag poster %>
+  <%= image_tag bookmark.movie.poster_url, size: "300x400", alt: "poster movie" %>
+  <%# methode destroy a bookmark %>
+  <%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove ?"}, class: 'text-danger' %>
+</div>

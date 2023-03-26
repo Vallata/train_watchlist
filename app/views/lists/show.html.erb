@@ -1,1 +1,19 @@
-<%= @list.name %>
+<div class="container m-5 p-4">
+
+  <h1><%= @list.name %></h1>
+
+  <h2>Bookmarks</h2>
+  <%# link to new bookmark %>
+  <%= link_to '+ Create a bookmark', new_list_bookmark_path(@list) %>
+
+  <%# partial for list of bookmarks%>
+  <div class="cards-bookmarks">
+    <% @list.bookmarks.each do |bookmark| %>
+      <%= render 'card_bookmark', bookmark: bookmark %>
+    <% end %>
+  </div>
+
+  <%# link home %>
+  <%= link_to 'Back home', lists_path %>
+
+</div>

@@ -1,4 +1,12 @@
-<%= simple_form_for @list do |f| %>
-  <%= f.input :name, label: 'Please enter your list name', error: 'Name is mandatory, please specify one' %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container m-5 p-4">
+
+  <%# form for a new list %>
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name, label: 'Please enter your list name', error: 'Name is mandatory, please specify one' %>
+    <%= f.button :submit %>
+  <% end %>
+
+  <%# link home %>
+  <%= link_to 'Back home', lists_path %>
+
+</div>

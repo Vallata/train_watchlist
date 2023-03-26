@@ -1,3 +1,23 @@
-<% @lists.each do |list| %>
-  <%= list.name %>
-<% end %>
+<%# banner %>
+<%= render 'banner' %>
+<%# ********************** %>
+
+<div class="container m-5 p-4">
+
+  <div class="d-flex justify-content-between">
+    <h2>Your lists</h2>
+
+    <%# link to new bookmark %>
+    <%= link_to '+ Create a list', new_list_path, class: "btn btn-primary"%>
+  </div>
+
+
+  <div class="cards-lists my-3">
+    <% @lists.each do |list| %>
+      <%# render a partial for list card %>
+      <%= render 'card_list', list: list %>
+    <% end %>
+  </div>
+
+
+</div>

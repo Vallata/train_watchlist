@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+Bookmark.delete_all
 Movie.delete_all
 List.delete_all
 
@@ -18,5 +19,6 @@ Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal masterm
 puts "creating lists"
 List.create(name: "Drama Queen")
 List.create(name: "Pour les jours de pluie")
+List.create(name: "Pour les jours ensoleillés")
 
 puts "done!"

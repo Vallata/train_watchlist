@@ -1,0 +1,40 @@
+.card-bookmark {
+  height: 400px;
+  width: 100%; // 100% de la COLONNE définie par bootstrap
+  box-shadow: 12px 15px 85px #c1bdbd;
+  border-radius: 8px;
+
+  .bookmark-poster-url {
+    width: 100%;
+    height: 50%;
+    background-size: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .bookmark-infos {
+    padding:15px;
+  }
+
+  .bookmark-title, .bookmark-rating, .fa-star{
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .bookmark-title {
+    font-weight: bold;
+  }
+
+  .bookmark-rating, .bookmark-overview {
+    color: $font-grey;
+  }
+
+  .fa-star {
+    color: #F6DB31;
+  }
+
+  .bookmark-overview {
+    font-size: 14px;
+  }
+
+}

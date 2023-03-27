@@ -1,6 +1,12 @@
 <div class="card-list">
   <%# list name and link to show if the instance %>
-  <%= link_to list.name, list_path(list) %>
-  <%# destroy the list %>
-  <%= link_to "delete", list_path(list), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove ?"}, class: 'text-danger' %>
+  <div class="card-list-title">
+    <%= link_to list.name, list_path(list) %>
+  </div>
+  <div class="card-list-link">
+    <%# destroy the list %>
+    <%= link_to list_path(list), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove ?"}, class: 'text-danger' do %>
+	    <i class="fa-regular fa-trash-can"></i>
+    <% end %>
+  </div>
 </div>

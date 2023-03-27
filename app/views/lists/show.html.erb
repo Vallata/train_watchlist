@@ -1,19 +1,21 @@
-<div class="container m-5 p-4">
+<div class="container my-5">
 
-  <h1><%= @list.name %></h1>
+  <h1 class="text-center"><%= @list.name %></h1>
 
-  <h2>Bookmarks</h2>
-  <%# link to new bookmark %>
-  <%= link_to '+ Create a bookmark', new_list_bookmark_path(@list) %>
-
+  <div class="mb-4 d-flex justify-content-between">
+    <h3>Your movies</h3>
+    <%# link to new bookmark %>
+    <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: "btn btn-success text-light rounded-pill"%>
+  </div>
   <%# partial for list of bookmarks%>
   <div class="cards-bookmarks">
-    <% @list.bookmarks.each do |bookmark| %>
-      <%= render 'card_bookmark', bookmark: bookmark %>
-    <% end %>
+    <div class="row">
+      <% @list.bookmarks.each do |bookmark| %>
+        <div class="col-md-6">
+         <%= render 'card_bookmark', bookmark: bookmark %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <%# link home %>
-  <%= link_to 'Back home', lists_path %>
 
 </div>

@@ -1,4 +1,4 @@
-<div class="container m-5 p-4">
+<div class="container my-5 p-4">
 
   <h1>Create your bookmark</h1>
 
@@ -6,7 +6,7 @@
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.input :comment %>
     <%= f.association :movie %>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
+    <%= f.submit "Add", class: "btn btn-primary", data: { controller: "disable-button", action: "submit->disable-button#disable" }%>
   <% end %>
 
   <%# link home %>

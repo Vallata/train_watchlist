@@ -3,6 +3,9 @@
 require 'json'
 require "open-uri"
 
+Bookmark.delete_all
+Movie.delete_all
+List.delete_all
 
 url = "https://tmdb.lewagon.com/movie/top_rated"
 
@@ -15,11 +18,11 @@ movies.each do |movie|
   movie = Movie.new(
     title: movie["title"],
     overview: movie["overview"],
-    poster_url: movie["poster_path"],
+    poster_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
     rating: movie["vote_average"]
     )
   movie.save
-  puts "[#{movie.title}] #{movie.overview} - #{movie.rating}"
+  puts "[#{movie.title}] #{movie.overview} - #{movie.rating} - #{movie.poster_url}"
 end
 
 

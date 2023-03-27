@@ -1,28 +1,26 @@
+# parsing API
+
 require 'json'
-require 'rest-client'
+require "open-uri"
 
-url = "https://tmdb.lewagon.com/movie/top_rated.json"
 
-def story_url(id)
-  "https://hacker-news.firebaseio.com/v0/item/#{id}.json"
+url = "https://tmdb.lewagon.com/movie/top_rated"
+
+user_serialized = URI.open(url).read
+response = JSON.parse(user_serialized)
+
+movies = response["results"]
+
+movies.each do |movie|
+  movie = Movie.new(
+    title: movie["title"],
+    overview: movie["overview"],
+    poster_url: movie["poster_path"],
+    rating: movie["vote_average"]
+    )
+  movie.save
+  puts "[#{movie.title}] #{movie.overview} - #{movie.rating}"
 end
-
-# =>"https://hacker-news.firebaseio.com/v0/item/  4 .json"
-
-movies = JSON.parse(RestClient.get(url))
-
-p movies.first
-
-# movies.take(10).each do |movie|
-#   movie = Movie.new(
-#     title: hacker_news_post["title"],
-#     url: hacker_news_post["url"],
-#     votes: hacker_news_post["score"]
-#   )
-#   post.save
-#   puts "[#{post.votes}] #{post.title} - #{post.url}"
-# end
-
 
 
 # puts "starting!"

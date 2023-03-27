@@ -14,13 +14,13 @@
     <%= render "shared/navbar" %>
     <%= yield %>
 
-    <%# Typed.js %>
+    <%# Typed.js for the moving title%>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
         var typed = new Typed(".mov",{
-        strings: [ "Hello there,", "Welcome on Watchlist!", "What do you want to watch?"] ,
-        typeSpeed: 10,
-        backSpeed: 10,
+        strings: ["Hello there,", "Welcome on Watchlist!", "What do you want to watch?"] ,
+        typeSpeed: 40,
+        backSpeed: 40,
         loop: false
         })
     </script>

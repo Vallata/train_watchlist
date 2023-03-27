@@ -146,7 +146,7 @@ SimpleForm.setup do |config|
 
 
   # horizontal forms
-  #
+
   # horizontal default_wrapper
   config.wrappers :horizontal_form, class: 'row mb-3' do |b|
     b.use :html5

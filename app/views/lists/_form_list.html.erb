@@ -1,12 +1,4 @@
-<div class="container m-5 p-4">
-
-  <%# form for a new list %>
-  <%= simple_form_for @list do |f| %>
+<%= simple_form_for @list do |f| %>
     <%= f.input :name, label: "List Name", placeholder: "Please enter your list name", error: 'Name is mandatory, please specify one', input_html: { style: "border-radius: 5px; width: 300px;" } %>
     <%= f.button :submit, class:"btn btn-success rounded-pill" %>
   <% end %>
-
-  <%# link home %>
-  <%= link_to 'Back home', lists_path %>
-
-</div>

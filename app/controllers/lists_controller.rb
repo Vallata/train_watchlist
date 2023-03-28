@@ -21,6 +21,7 @@ class ListsController < ApplicationController
     if @list.save
       redirect_to list_path(@list)
     else
+      flash[:alert] = "Something went wrong!"
       render :new, status: :unprocessable_entity
     end
   end

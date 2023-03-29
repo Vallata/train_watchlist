@@ -18,6 +18,10 @@
     <%= render "shared/navbar" %>
     <%= yield %>
 
+    <%# notice for devise %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%# Typed.js for the moving title%>
     <script>
         var typed = new Typed(".mov",{

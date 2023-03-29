@@ -2,6 +2,9 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+    if params[:query].present?
+      @lists = List.search_by_name(params[:query])
+    end
     # ************************
     @list = List.new
     # ************************

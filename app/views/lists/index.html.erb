@@ -11,14 +11,27 @@
     <%= link_to 'Create a list', new_list_path, class: "btn btn-success text-light rounded-pill"%>
   </div>
 
+  <%= form_with url: lists_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Type a keyword"
+    %>
+    <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+  <% end %>
+
   <%# index of list with grid and partial (go to ) %>
   <div class="cards-lists my-3">
-    <% @lists.each do |list| %>
-      <%# render a partial for list card %>
-      <%= render 'card_list', list: list %>
+    <% if @lists.any? %>
+      <% @lists.each do |list| %>
+        <%# render a partial for list card %>
+        <%= render 'card_list', list: list %>
+      <% end %>
+    <% else %>
+      <em>Sorry, no lists found.</em>
     <% end %>
   </div>
 
-  <%= render 'form_list'%>
+  <%= render 'form_list', list: @list%>
 
 </div>

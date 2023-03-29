@@ -4,6 +4,7 @@ class List < ApplicationRecord
   has_many :movies, through: :bookmarks
   validates :name, presence: true, allow_blank: false
   validates :name, uniqueness: true
+  has_one_attached :photo
 
   include PgSearch::Model
   pg_search_scope :search_by_name,

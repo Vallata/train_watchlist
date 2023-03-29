@@ -1,6 +1,11 @@
-<div class="container my-5">
+<div class="card-background-image mb-4 d-flex justify-content-center align-items-center"
+style="height: 300px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')">
 
-  <h1 class="text-center"><%= @list.name %></h1>
+  <h1 class="text-center text-white"><%= @list.name %></h1>
+
+</div>
+
+<div class="container my-5">
 
   <div class="mb-4 d-flex justify-content-between">
     <h3>Your movies </h3>

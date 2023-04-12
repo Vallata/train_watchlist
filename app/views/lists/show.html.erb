@@ -1,6 +1,10 @@
-<div class="container my-5">
+<div class="show"
+  style="height: 300px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, height: 300, crop: :fill %>')"
+>
+    <h1 class="text-center text-white"><%= @list.name %></h1>
+</div>
 
-  <h1 class="text-center text-white"><%= @list.name %></h1>
+<div class="container my-5">
 
   <div class="mb-4 d-flex justify-content-between">
     <h3>Your movies of list "<%= @list.name %>"" </h3>

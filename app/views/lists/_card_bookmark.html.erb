@@ -22,3 +22,69 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="booking-form px-4">
+
+    <h1 class="booking-title mb-4 mt- text-center">Book the car</h1>
+
+    <%# form to create a new bookmark %>
+    <%= simple_form_for [@car, @booking] do |f| %>
+      <%= f.input :starts_at, input_html: { style: "border-radius: 20px; width: 300px;" }%>
+      <%= f.input :ends_at, input_html: { style: "border-radius: 20px; width: 300px;" } %>
+      <%= f.submit "Book", class: "button-book btn btn-primary px-5 my-3"%>
+    <% end %>
+
+</div>
+
+
+<div class="booking-form px-4">
+
+    <h1 class="booking-title mt-4 my-5 text-center">Book the car</h1>
+
+    <%= simple_form_for [@car, @booking],
+                      html: {
+                        data: {
+                          controller: 'flatpickr'
+                        }
+                      } do |f| %>
+    <%# // Target each input with the stimulus controller: %>
+    <%# // <input ...data-flatpickr-target="startDateInput"...> %>
+    <%= f.input :starts_at,
+                # // Note that we have to turn our inputs to string inputs
+                # // so that flatpickr can correctly use them
+                as: :string,
+                label: 'When do you want to book?',
+                input_html: {
+                  data: {
+                    flatpickr_target: 'startDateInput',
+                } } %>
+    <%# // <input ...data-flatpickr-target="endDateInput"...> %>
+    <%# // On peut se permettre de cacher celui-ci avec la classe bootstrap d-none
+    // car le premier input ouvre un calendrier qui autorise le choix
+    // de la date de début et de fin %>
+    <%# <%= f.input :ends_at,
+                as: :string,
+                input_html: {
+                  class: 'd-none',
+                  data: {
+                    flatpickr_target: 'endDateInput'
+                  }
+                } %>
+    <%= f.submit "Book", class: "button-book btn btn-primary px-5 my-3"%>
+    <% end %>
+  </div>

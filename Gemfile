@@ -15,6 +15,8 @@ gem "pg", "~> 1.1"
 # for search bar
 gem "pg_search"
 
+gem "pundit"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
